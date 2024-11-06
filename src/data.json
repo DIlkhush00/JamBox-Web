@@ -1,0 +1,10 @@
+{
+    "songs" : [
+        {
+            "title" : "Sample",
+            "cover" : "..",
+            "audio" : "..",
+            "duration" : "140"
+        }
+    ]
+}
