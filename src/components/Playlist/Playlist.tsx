@@ -1,18 +1,22 @@
-import { PlaylistStyle } from "../styles/Playlist.styled";
+import { PlaylistStyle, PlaylistWrapperStyle } from "../styles/Playlist.styled";
 import Song from "../Song";
+import { SongObj } from "../utils/interfaces";
 
-const NNUMS : number[] = [1, 2, 3, 4, 5];
-const COLORS : string[] = ['red', 'blue', 'hotpink', 'green', 'yellow'];
+interface Props {
+  songs: SongObj[]
+}
 
-function Playlist() {
+function Playlist({ songs }: Props) {
   return (
-    <PlaylistStyle>
-      {NNUMS.map((value, i) => {
-        return (
-          <Song key={i} index={value} color={COLORS[i % 5]} />
-        )
-      })}
-    </PlaylistStyle>
+    <PlaylistWrapperStyle>
+      <PlaylistStyle>
+        {songs.map((song, i) => {
+          return (
+            <Song key={i} song={song} />
+          )
+        })}
+      </PlaylistStyle>
+    </PlaylistWrapperStyle>
   );
 }
 

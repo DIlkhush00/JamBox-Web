@@ -1,0 +1,60 @@
+{
+    "songs" : [
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        },
+        {
+            "title" : "Sample",
+            "artist": "Vaundy",
+            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
+            "audio" : "..",
+            "duration" : "246"
+        }
+    ]
+}
