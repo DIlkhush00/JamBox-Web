@@ -21,7 +21,7 @@ function App () {
 
       <AppContainer>
         <Playlist songs={songs}/>
-        <Player />
+        <Player song={songs[1]} />
       </AppContainer>
     </>
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PlaylistWrapperStyle = styled.div`
   position: relative;
-  flex: 2;
+  flex: 1;
   padding: 2rem;
 `;
 

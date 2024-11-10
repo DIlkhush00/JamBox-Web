@@ -9,7 +9,7 @@ const Song = ({ song }: Props) => {
   return (
     <SongStyles $bgcolor={"red"} as={"button"}>
       <CoverStyles>
-        <img src={song.coverImage} alt="odoriko song cover" width={100} />
+        <img src={song.coverImage} alt="odoriko song cover" />
       </CoverStyles>
       <SongInfoStyles>
         <h3>{song.title}</h3>

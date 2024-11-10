@@ -19,7 +19,7 @@ export const SongStyles = styled.div<Props>`
 export const CoverStyles = styled.div`
     flex: 1;
     img {
-        width: 90%;
+        width: 100%;
         border-radius: 10%;
         object-fit: cover;
     }
