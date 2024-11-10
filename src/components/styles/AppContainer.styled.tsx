@@ -4,5 +4,5 @@ export const AppContainer = styled.div`
     display: flex;
     height: 100vh;
     overflow: hidden;
-    background-color: gray;
+    background-color: var(--bg-color);
 `;

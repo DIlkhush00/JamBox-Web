@@ -1,11 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+    :root {
+        --color-text-primary: #fefdfc;
+        --color-text-secondary: #ccd5d8;
+        --bg-color: #1f292b;
+        --border-radius: 16px;
+    }
+
     *, *::before, *::after {
         box-sizing: border-box;
     }
 
     * {
+        font-family: "Funnel Display", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        color: var(--color-text-primary);
         margin: 0;
     }
 
@@ -28,6 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     p {
+        color: var(--color-text-secondary);
         text-wrap: pretty;
     }
     
@@ -37,5 +52,16 @@ export const GlobalStyles = createGlobalStyle`
 
     #root, #__next {
         isolation: isolate;
+    }
+
+    button {
+        border-radius: 0;
+        text-align: inherit;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        border: none;
+        color: inherit;
+        font: inherit;
     }
 `;

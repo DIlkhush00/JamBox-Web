@@ -5,11 +5,15 @@ interface Props {
 }
 
 export const SongStyles = styled.div<Props>`
-    background-color: ${p => p.$bgcolor};
+    background-color: var(--bg-color);
     padding: 1rem;
     display: flex;
     gap: 1rem;
     min-width: 17rem;
+
+    &:hover {
+        background-color: #1c1f20;
+    }
 `;
 
 export const CoverStyles = styled.div`
@@ -31,6 +35,5 @@ export const SongInfoStyles = styled.div`
 
     p {
         margin-top: 4px;
-        color: #555;
     }
 `;

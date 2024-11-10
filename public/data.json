@@ -1,18 +1,18 @@
 {
     "songs" : [
         {
-            "title" : "Sample",
+            "title" : "Odoriko",
             "artist": "Vaundy",
             "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
-            "audio" : "..",
+            "audio" : "/songs/odoriko.webm",
             "duration" : "246"
         },
         {
-            "title" : "Sample",
-            "artist": "Vaundy",
-            "coverImage" : "https://upload.wikimedia.org/wikipedia/en/e/e0/Vaundy_-_Odoriko.png",
-            "audio" : "..",
-            "duration" : "246"
+            "title" : "Feel Good Inc.",
+            "artist": "Gorillaz",
+            "coverImage" : "https://t2.genius.com/unsafe/504x504/https%3A%2F%2Fimages.genius.com%2F57bd806e697500ff0608d24b4bd4f0c1.1000x1000x1.png",
+            "audio" : "/songs/Feel Good Inc.webm",
+            "duration" : "253"
         },
         {
             "title" : "Sample",

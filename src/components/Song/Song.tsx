@@ -1,14 +1,13 @@
 import { SongStyles, CoverStyles, SongInfoStyles } from "../styles/Song.styled";
 import { SongObj } from "../utils/interfaces";
 
-
 interface Props {
-  song: SongObj,
+  song: SongObj;
 }
 
-const Song = ({ song } : Props) => {
+const Song = ({ song }: Props) => {
   return (
-    <SongStyles $bgcolor={'red'} >
+    <SongStyles $bgcolor={"red"} as={"button"}>
       <CoverStyles>
         <img src={song.coverImage} alt="odoriko song cover" width={100} />
       </CoverStyles>
@@ -18,6 +17,6 @@ const Song = ({ song } : Props) => {
       </SongInfoStyles>
     </SongStyles>
   );
-}
+};
 
 export default Song;
