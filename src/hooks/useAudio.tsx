@@ -1,7 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, MutableRefObject } from 'react';
 
-export const useAudio = (audioFileURL : string) => {
-    const audioRef = useRef(new Audio(audioFileURL));
+type RefType = MutableRefObject<HTMLAudioElement | null>;
+type UseAudioReturn = [
+    boolean,                                   // isPlaying
+    () => void,                                // toggleAudio
+    () => void                                 // stopAudio
+];
+  
+export const useAudio = (audioRef : RefType) : UseAudioReturn => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     const toggleAudio = () => {
@@ -9,30 +15,24 @@ export const useAudio = (audioFileURL : string) => {
     };
 
     const stopAudio = () => {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
+        audioRef?.current?.pause();
+        if(audioRef.current)
+            audioRef.current.currentTime = 0;
         setIsPlaying(false);
     };
 
     useEffect(() => {
+        const audio = audioRef.current;
         if (isPlaying) {
-            audioRef.current.play();
+            audio?.play();
         } else {
-            audioRef.current.pause();
+            audio?.pause();
         }
 
-        // Cleanup function to stop the audio when the component unmounts
         return () => {
-            audioRef.current.pause();
-            // audioRef.current.currentTime = 0;
+            audio?.pause();
         };
-    }, [isPlaying]);
-
-    useEffect(() => {
-        // Stop current audio when the song URL changes
-        stopAudio();
-        audioRef.current = new Audio(audioFileURL);
-    }, [audioFileURL]);
+    }, [isPlaying, audioRef]);
 
     return [isPlaying, toggleAudio, stopAudio];
 };

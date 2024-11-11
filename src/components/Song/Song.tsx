@@ -2,12 +2,13 @@ import { SongStyles, CoverStyles, SongInfoStyles } from "../styles/Song.styled";
 import { SongObj } from "../utils/interfaces";
 
 interface Props {
-  song: SongObj;
+  song: SongObj,
+  handleSongClick: (id : string) => void
 }
 
-const Song = ({ song }: Props) => {
+const Song = ({ song, handleSongClick }: Props) => {
   return (
-    <SongStyles $bgcolor={"red"} as={"button"}>
+    <SongStyles $bgcolor={"red"} as={"button"} onClick={() => handleSongClick(song.id)}>
       <CoverStyles>
         <img src={song.coverImage} alt="odoriko song cover" />
       </CoverStyles>

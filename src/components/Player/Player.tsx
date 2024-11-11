@@ -1,20 +1,21 @@
 import { PlayerStyle } from "../styles/Player.styled";
 import styled from "styled-components";
 import { SongObj } from "../utils/interfaces";
-import { CoverStyles } from "../styles/Song.styled";
+import { CoverStyles, SongInfoStyles } from "../styles/Song.styled";
 import AudioPlayer from "../AudioPlayer";
 
 const Card = styled.div`
   max-width: 75%;
-  border: 1px solid teal;
+  max-height: 90%;
   margin: 0 auto;
   padding: 2rem;
+  box-shadow: rgb(28, 31, 32) 0px 8px 24px;
+  border-radius: var(--border-radius);
 
   div {
     padding: 1rem;
   }
 `;
-
 
 interface Props {
   song: SongObj;
@@ -27,11 +28,11 @@ function Player({ song }: Props) {
         <CoverStyles>
           <img src={song?.coverImage} alt="odoriko song cover" />
         </CoverStyles>
-        <div>
+        <SongInfoStyles>
           <h3>{song?.title}</h3>
           <p>{song?.artist}</p>
-        </div>
-        <AudioPlayer audioFileURL={song?.audio}/>
+        </SongInfoStyles>
+        <AudioPlayer audioFileURL={song?.audio} />
       </Card>
     </PlayerStyle>
   );

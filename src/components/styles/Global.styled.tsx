@@ -42,11 +42,11 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
         color: var(--color-text-secondary);
-        text-wrap: pretty;
+        overflow-wrap: break-word;
     }
     
     h1, h2, h3, h4, h5, h6 {
-        text-wrap: balance;
+        overflow-wrap: normal;
     }
 
     #root, #__next {
