@@ -20,12 +20,12 @@ const TimeDisplay = styled.div`
   color: var(--color-text-secondary);
 `;
 
-interface Props {
+interface InputProps {
     $max: number,
     $value: number
 }
 
-const ProgressBar = styled.input.attrs({ type: "range" }) <Props> `
+const ProgressBar = styled.input.attrs({ type: "range" }) <InputProps> `
   width: 100%;
   appearance: none;
   height: 8px;
@@ -63,7 +63,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: background 0.2s ease;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 400s;
 
   &:hover {
     /* background: #194d5b; */

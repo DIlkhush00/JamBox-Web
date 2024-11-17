@@ -1,15 +1,32 @@
 import styled from "styled-components";
 
-export const PlaylistWrapperStyle = styled.div`
+const PlaylistWrapperStyle = styled.div`
   position: relative;
   flex: 1;
   padding: 2rem;
 `;
 
-export const PlaylistStyle = styled.div`
+const PlaylistHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+
+  & > span {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+`;
+
+const PlaylistStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding-block: 2rem;
+  padding-bottom: 2rem;
   max-width: 25rem; /* Adjust the Playlist Width */
   display: flex;
   flex-direction: column;
@@ -18,3 +35,42 @@ export const PlaylistStyle = styled.div`
   border-radius: var(--border-radius);
   box-shadow: rgb(28, 31, 32) 0px 8px 24px;
 `;
+
+const UploadButton = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > input[type="file"] {
+    display: none;
+  }
+
+  & > label {
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    outline: 0;
+    user-select: none;
+    background-color: var(--bg-color);
+    color: var(--color-text-primary);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & > label:hover {
+    background-color: teal;
+  }
+
+  & > label > .upload.main {
+    padding-right: 6px;
+  }
+`;
+
+export { PlaylistWrapperStyle, PlaylistStyle, UploadButton, PlaylistHeader };

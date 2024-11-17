@@ -19,7 +19,7 @@ function AudioPlayer({ audioFileURL }: Props) {
   const [isPlaying, toggleAudio, stopAudio] = useAudio(audioRef);
   const [duration, setDuration] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
-
+  
   useEffect(() => {
     const audio = audioRef.current;
 
@@ -95,17 +95,18 @@ function AudioPlayer({ audioFileURL }: Props) {
               audioRef.current.currentTime = newTime;
             }
           }}
+          disabled = {audioFileURL === undefined} 
             $max = {duration}
             $value = {currentTime}
         />
         <span>{duration ? `${formatTime(duration)}` : "Loading..."}</span>
       </TimeDisplay>
       <Controls>
-        <Button onClick={rewind}>{<Rewind />}</Button>
-        <PlayButton onClick={toggleAudio}>
+        <Button onClick={rewind} disabled = {audioFileURL === undefined} >{<Rewind />}</Button>
+        <PlayButton onClick={toggleAudio} disabled = {audioFileURL === undefined} >
           {isPlaying ? <Pause /> : <Play />}
         </PlayButton>
-        <Button onClick={skip}>{<FastForward />}</Button>
+        <Button onClick={skip} disabled = {audioFileURL === undefined} >{<FastForward />}</Button>
         {/* <Button onClick={stopAudio}>Stop</Button> */}
       </Controls>
     </PlayerContainer>

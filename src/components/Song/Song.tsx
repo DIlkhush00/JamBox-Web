@@ -10,7 +10,7 @@ const Song = ({ song, handleSongClick }: Props) => {
   return (
     <SongStyles $bgcolor={"red"} as={"button"} onClick={() => handleSongClick(song.id)}>
       <CoverStyles>
-        <img src={song.coverImage} alt="odoriko song cover" />
+        <img src={song.coverImage} alt={`${song?.title} song cover`} />
       </CoverStyles>
       <SongInfoStyles>
         <h3>{song.title}</h3>

@@ -26,7 +26,7 @@ function Player({ song }: Props) {
     <PlayerStyle>
       <Card>
         <CoverStyles>
-          <img src={song?.coverImage} alt="odoriko song cover" />
+          <img src={song?.coverImage} alt={`${song?.title ?? ''} song cover`}/>
         </CoverStyles>
         <SongInfoStyles>
           <h3>{song?.title}</h3>

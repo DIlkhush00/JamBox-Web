@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => setSongs(data.songs))
+      .then((data) => setSongs([]))
       .catch((error) => console.error("Error loading file!", error));
   }, []);
 
@@ -27,12 +27,19 @@ function App() {
     else
       console.warn(`Song with id ${id} not found`)
   };
+
+  const handleSongs = (songsList : SongObj[]) => {
+    console.log(songs)
+    const newSongsList = [...songs].concat(songsList);
+    setSongs(newSongsList)
+  }
+
   return (
     <>
       <GlobalStyles />
 
       <AppContainer>
-        <Playlist songs={songs} handleSongClick={handleSongClick} />
+        <Playlist songs={songs} handleSongClick={handleSongClick} handleSongs={handleSongs} />
         <Player song={currentSong} />
       </AppContainer>
     </>
