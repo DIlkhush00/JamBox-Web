@@ -3,9 +3,11 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
     :root {
-        --color-text-primary: #fefdfc;
+        --color-text-primary: #EEEEEE;
         --color-text-secondary: #ccd5d8;
-        --bg-color: #1f292b;
+        --bg-color: #222831;
+        --btn-color: #00ADB5;
+        --hover-color: #393E46;
         --border-radius: 16px;
     }
 

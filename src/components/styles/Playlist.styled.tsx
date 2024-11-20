@@ -23,7 +23,7 @@ const PlaylistStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
@@ -41,6 +41,7 @@ const UploadButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 
   & > input[type="file"] {
     display: none;
@@ -65,7 +66,7 @@ const UploadButton = styled.div`
   }
 
   & > label:hover {
-    background-color: teal;
+    background-color: var(--btn-color);
   }
 
   & > label > .upload.main {

@@ -12,7 +12,7 @@ export const SongStyles = styled.div<Props>`
   min-width: 17rem;
 
   &:hover {
-    background-color: #1c1f20;
+    background-color: var(--hover-color);
   }
 `;
 

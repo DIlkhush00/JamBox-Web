@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => setSongs([]))
+      .then((data) => setSongs(data.songs))
       .catch((error) => console.error("Error loading file!", error));
   }, []);
 

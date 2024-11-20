@@ -8,5 +8,5 @@ export const AppContainer = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
-    background: hotpink;
+    background: var(--bg-color);
 `;

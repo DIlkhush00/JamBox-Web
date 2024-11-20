@@ -7,6 +7,9 @@ import {
 import Song from "../Song";
 import { SongObj } from "../utils/interfaces";
 import { Upload } from "react-feather";
+import { DefaultCoverImage } from "../../assets/Images";
+
+const DEFAULT_ARTIST : string = "Unknown Artist";
 
 interface Props {
   songs: SongObj[];
@@ -28,8 +31,8 @@ const handleUpload = (
       const song: SongObj = {
         id: crypto.randomUUID(),
         title: file.name.replace(/\.[^/.]+$/, ""),
-        artist: "Unknown Artist",
-        coverImage: "/Default Cover.png",
+        artist: DEFAULT_ARTIST,
+        coverImage: DefaultCoverImage,
         duration: Math.round(audio.duration),
         audio: audioURL,
       };
@@ -60,10 +63,10 @@ function Playlist({ songs, handleSongClick, handleSongs }: Props) {
           </UploadButton>
         </PlaylistHeader>}
 
-        {songs.length ? (
-          songs.map((song, i) => {
+        {songs.length > 0 ? (
+          songs.map((song) => {
             return (
-              <Song key={i} song={song} handleSongClick={handleSongClick} />
+              <Song key={song.id} song={song} handleSongClick={handleSongClick} />
             );
           })
         ) : (
