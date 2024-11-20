@@ -1,3 +1,3 @@
-import DefaultCoverImage from './images/Default Cover.jpg';
+import DefaultCoverImage from './covers/Default Cover.jpg';
 
 export { DefaultCoverImage };
