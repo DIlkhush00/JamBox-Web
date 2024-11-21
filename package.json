@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://DIlkhush00.github.io/JamBox-Web",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
