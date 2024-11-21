@@ -34,4 +34,4 @@ You could help by:
 - [Suggest new features and report issues](https://github.com/DIlkhush00/JamBox-Web/issues)
 
 ## License
-JamBox-Web is free and open source project licensed under the [MIT License](./LICENSE.md).
+JamBox-Web is free and open source project licensed under the [MIT License](./LICENSE).
