@@ -10,13 +10,6 @@ function App() {
   const [currentSong, setCurrentSong] = useState<SongObj>({} as SongObj);
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => setSongs(data.songs))
-      .catch((error) => console.error("Error loading file!", error));
-  }, []);
-
-  useEffect(() => {
     setCurrentSong(songs[0]);
   }, [songs]);
 
