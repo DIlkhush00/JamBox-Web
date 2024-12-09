@@ -166,18 +166,15 @@ Error generating stack: `+l.message+`
 
   &::-webkit-slider-thumb {
     appearance: none;
-    width: 6px;
-    height: 12px;
-    border-radius: var(--border-radius);
-    background: var(--btn-color);
+    width: 0;
+    background: transparent;
     cursor: pointer;
   }
 
   &::-moz-range-thumb {
-    width: 6px;
-    height: 12px;
-    border-radius: var(--border-radius);
-    background: var(--btn-color);
+    appearance: none;
+    width: 0;
+    background: transparent;
     cursor: pointer;
   }
 `,ou=ae.button`
