@@ -29,7 +29,7 @@ const ProgressBar = styled.input.attrs({ type: "range" }) <InputProps> `
   width: 100%;
   appearance: none;
   height: 8px;
-  background: linear-gradient(to right, var(--btn-color) ${(p) => (p.$value / p.$max) * 100}%, #444 ${(p) => (p.$value / p.$max) * 100}%);
+  background: linear-gradient(to right, var(--color-text-primary) ${(p) => (p.$value / p.$max) * 100}%, #444 ${(p) => (p.$value / p.$max) * 100}%);
   border-radius: var(--border-radius);
   outline: none;
   overflow: hidden;
@@ -58,12 +58,13 @@ const Button = styled.button`
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
   font-size: 14px;
-  font-weight: 400s;
+  font-weight: 400;
+  min-width: max-content;
 
   &:hover {
-    background: var(--btn-color);
+    background-color: var(--btn-color);
   }
 
   &:disabled {

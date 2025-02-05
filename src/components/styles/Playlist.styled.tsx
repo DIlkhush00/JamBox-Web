@@ -4,6 +4,7 @@ const PlaylistWrapperStyle = styled.div`
   position: relative;
   flex: 1;
   padding: 2rem;
+  margin: 0 auto;
 `;
 
 const PlaylistHeader = styled.div`
@@ -33,7 +34,7 @@ const PlaylistStyle = styled.div`
   overflow-y: auto;
   scroll-behavior: smooth;
   border-radius: var(--border-radius);
-  box-shadow: rgb(28, 31, 32) 0px 8px 24px;
+  box-shadow: var(--box-shadow);
 `;
 
 const UploadButton = styled.div`

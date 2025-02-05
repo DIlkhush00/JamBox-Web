@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-interface Props {
-  $bgcolor: string;
+interface SongStylesProps {
+  $active: boolean;
 }
 
-export const SongStyles = styled.div<Props>`
-  /* background-color: var(--bg-color); */
+export const SongStyles = styled.div<SongStylesProps>`
+  background-color: ${(props) => props.$active ? "var(--hover-color)" : "var(--bg-color)"};
   padding: 1rem;
   display: flex;
   gap: 1rem;
@@ -16,11 +16,15 @@ export const SongStyles = styled.div<Props>`
   }
 `;
 
-export const CoverStyles = styled.div`
+interface CoverProps {
+  $size: 'small' | 'large';
+}
+
+export const CoverStyles = styled.div<CoverProps>`
   flex: 1;
   img {
     width: 100%;
-    max-width: 300px;
+    max-width: ${(props) => props.$size === "small" ? "100px" : "300px"};
     border-radius: 10%;
     object-fit: cover;
   }

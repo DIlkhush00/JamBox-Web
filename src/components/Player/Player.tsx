@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { SongObj } from "../utils/interfaces";
 import { CoverStyles, SongInfoStyles } from "../styles/Song.styled";
 import AudioPlayer from "../AudioPlayer";
+import { DefaultCoverImage } from "../../assets/Images";
 
 const Card = styled.div`
   max-width: 75%;
   max-height: 90%;
   margin: 0 auto;
   padding: 2rem;
-  box-shadow: rgb(28, 31, 32) 0px 8px 24px;
+  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
 
   div {
@@ -25,8 +26,8 @@ function Player({ song }: Props) {
   return (
     <PlayerStyle>
       <Card>
-        <CoverStyles>
-          <img src={song?.coverImage} alt={`${song?.title ?? ''} song cover`}/>
+        <CoverStyles $size={"large"}>
+          <img src={song?.coverImage ?? DefaultCoverImage} alt={`${song?.title ?? ''} song cover`}/>
         </CoverStyles>
         <SongInfoStyles>
           <h3>{song?.title}</h3>

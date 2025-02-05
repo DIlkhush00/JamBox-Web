@@ -3,12 +3,14 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
     :root {
-        --color-text-primary: #EEEEEE;
+        --color-text-primary: #98d8ef;
         --color-text-secondary: #ccd5d8;
-        --bg-color: #222831;
-        --btn-color: #00ADB5;
-        --hover-color: #393E46;
+        /* --bg-color: #222831; */
+        --bg-color: #0a5bad;
+        --btn-color: #133E87;
+        --hover-color: #133E87;
         --border-radius: 16px;
+        --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     *, *::before, *::after {

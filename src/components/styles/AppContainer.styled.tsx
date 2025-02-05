@@ -9,4 +9,11 @@ export const AppContainer = styled.div`
     background-position: center;
     background-repeat: no-repeat; */
     background: var(--bg-color);
+
+    @media (max-width: 865px) {
+        flex-direction: column-reverse;
+        height: 100%;
+        gap: 4rem;
+        padding-top: 10%;
+    }
 `;
