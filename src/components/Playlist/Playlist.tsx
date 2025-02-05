@@ -9,10 +9,11 @@ import { SongObj } from "../utils/interfaces";
 import { Upload } from "react-feather";
 import { DefaultCoverImage } from "../../assets/Images";
 
-const DEFAULT_ARTIST : string = "Unknown Artist";
+const DEFAULT_ARTIST: string = "Unknown Artist";
 
 interface Props {
   songs: SongObj[];
+  currentSongId?: string;
   handleSongClick: (id: string) => void;
   handleSongs: (songsList: SongObj[]) => void;
 }
@@ -43,30 +44,43 @@ const handleUpload = (
   });
 };
 
-function Playlist({ songs, handleSongClick, handleSongs }: Props) {
+function Playlist({
+  songs,
+  currentSongId,
+  handleSongClick,
+  handleSongs,
+}: Props) {
   return (
     <PlaylistWrapperStyle>
       <PlaylistStyle>
-        {songs.length > 0 && <PlaylistHeader>
-          <span>Playlist</span>
-          <UploadButton>
-            <label htmlFor="input-file">
-              <Upload className="upload small" size={24} />
-            </label>
-            <input
-              id="input-file"
-              type="file"
-              accept="audio/*"
-              multiple
-              onChange={(event) => handleUpload(event, handleSongs)}
-            />
-          </UploadButton>
-        </PlaylistHeader>}
+        {songs.length > 0 && (
+          <PlaylistHeader>
+            <span>Playlist</span>
+            <UploadButton>
+              <label htmlFor="input-file">
+                <Upload className="upload small" size={24} />
+              </label>
+              <input
+                id="input-file"
+                type="file"
+                accept="audio/*"
+                multiple
+                onChange={(event) => handleUpload(event, handleSongs)}
+              />
+            </UploadButton>
+          </PlaylistHeader>
+        )}
 
         {songs.length > 0 ? (
           songs.map((song) => {
+            const active = currentSongId ? song.id === currentSongId : false;
             return (
-              <Song key={song.id} song={song} handleSongClick={handleSongClick} />
+              <Song
+                active={active}
+                key={song.id}
+                song={song}
+                handleSongClick={handleSongClick}
+              />
             );
           })
         ) : (

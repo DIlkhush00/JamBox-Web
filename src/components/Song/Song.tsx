@@ -3,13 +3,14 @@ import { SongObj } from "../utils/interfaces";
 
 interface Props {
   song: SongObj,
+  active: boolean,
   handleSongClick: (id : string) => void
 }
 
-const Song = ({ song, handleSongClick }: Props) => {
+const Song = ({ song, active, handleSongClick }: Props) => {
   return (
-    <SongStyles $bgcolor={"red"} as={"button"} onClick={() => handleSongClick(song.id)}>
-      <CoverStyles>
+    <SongStyles $active={active} as={"button"} onClick={() => handleSongClick(song.id)}>
+      <CoverStyles $size={"small"}>
         <img src={song.coverImage} alt={`${song?.title} song cover`} />
       </CoverStyles>
       <SongInfoStyles>

@@ -13,26 +13,44 @@ function App() {
     setCurrentSong(songs[0]);
   }, [songs]);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("songs.json");
+  //       const jsonData = await response.json();
+  //       console.log({ jsonData });
+  //       setSongs(jsonData.songs);
+  //     } catch (error) {
+  //       console.error("Error fetching data: ", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   const handleSongClick = (id: string) => {
     const newSong = songs.find((song) => song.id === id);
-    if(newSong)
-      setCurrentSong(newSong);
-    else
-      console.warn(`Song with id ${id} not found`)
+    if (newSong) setCurrentSong(newSong);
+    else console.warn(`Song with id ${id} not found`);
   };
 
-  const handleSongs = (songsList : SongObj[]) => {
-    console.log(songs)
+  const handleSongs = (songsList: SongObj[]) => {
+    console.log(songs);
     const newSongsList = [...songs].concat(songsList);
-    setSongs(newSongsList)
-  }
+    setSongs(newSongsList);
+  };
 
   return (
     <>
       <GlobalStyles />
 
       <AppContainer>
-        <Playlist songs={songs} handleSongClick={handleSongClick} handleSongs={handleSongs} />
+        <Playlist
+          songs={songs}
+          currentSongId={currentSong?.id}
+          handleSongClick={handleSongClick}
+          handleSongs={handleSongs}
+        />
         <Player song={currentSong} />
       </AppContainer>
     </>
